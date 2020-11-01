@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.shaadi.challenge.viewmodel.DataItemViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/header_bg"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_5dp"
+            android:layout_marginRight="@dimen/dim_5dp"
+            android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_camera"
+                app:imageUrl="@{viewModel.imageurl}"
+                android:layout_marginTop="@dimen/create_appointment_left_padding" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/llApproveCancel"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivApprove"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    app:visibility="@{viewModel.approved>0 ?View.GONE : View.VISIBLE}"
+                    android:src="@drawable/ic_round_approve" />
+                <ImageView
+                    android:id="@+id/ivCancel"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    app:visibility="@{viewModel.approved>0 ?View.GONE : View.VISIBLE}"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_round_cancel" />
+
+
+                <TextView
+                    android:id="@+id/tvstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{viewModel.approved==2 ?@color/light_red:@color/light_green}"
+                    android:text="@{viewModel.appruvalStatus()}"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="true"
+                    app:visibility="@{viewModel.approved==0  ?View.GONE : View.VISIBLE}"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/create_appointment_left_padding">
+
+                <TextView
+                    android:id="@+id/tvVisitorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:text="@{viewModel.name}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_font_size" />
+
+                <TextView
+                    android:id="@+id/tvVisitorEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    app:text="@{viewModel.email}"
+                    android:text="sidgwd@gmail.com"
+                    android:textColor="@color/hint_color" />
+
+
+                <TextView
+                    android:id="@+id/tvVisitorMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    app:text="@{viewModel.mobile}"
+                    android:textColor="@color/hint_color" />
+
+                <TextView
+                    android:id="@+id/tvlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    app:text="@{viewModel.location}"
+                    android:textColor="@color/hint_color" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_border_height"
+            android:layout_below="@+id/llmain"
+            android:background="@color/border_color"
+            android:paddingTop="10dp"></View>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="solid">#4D148C</color>
+    <color name="blue">#0000FF</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="et_act">#0067E5</color>
+    <color name="et_def">#050001</color>
+    <color name="light_sky_blue">#E5F6FF</color>
+    <color name="sky_blue">#DFF4FE</color>
+    <color name="dark_sky_blue">#28ABDB</color>
+    <color name="gray">#767677</color>
+    <color name="intellischool_light_sky_blue">#28579EC7</color>
+    <color name="intellischool_light_sky_blue_opac">#579EC7</color>
+    <color name="vams_blue_border">#28ABDB</color>
+    <color name="VAMS_Orange_Trans">#AFFFA500</color>
+    <color name="vams_login_text">#0F1A6A</color>
+    <color name="vams_text">#414040</color>
+    <color name="vams_lst_white">#33FFFFFF</color>
+    <color name="btn_color">#2c3e8a</color>
+    <color name="LightSkyBlue">#87CEFA</color>
+    <color name="DarkGray">#A9A9A9</color>
+    <color name="vams_error">#F00</color>
+
+    <color name="light_green">#4CAF50</color>
+    <color name="light_yellow">#FBC02D</color>
+    <color name="light_orange">#F57F17</color>
+    <color name="light_red">#BF360C</color>
+
+
+    <color name="snackbar_action_color">@color/green</color>
+    <color name="app_font_color">#2196f3</color>
+
+    <color name="app_button_color">#2196f3</color>
+    <!--
+        <color name="hint_color">#BDBDBD</color>
+    -->
+    <color name="hint_color">@color/text_color_light</color>
+    <color name="hint_color_light">#E0E0E0</color>
+
+    <color name="border_color">#E0E0E0</color>
+    <color name="colorSecondary">#1B325F</color>
+
+    <color name="star_color">@color/red</color>
+
+    <color name="text_color_dark">#000000</color><!--Light-->
+    <color name="error_color">#f15a29</color><!--Light-->
+    <color name="text_color_light">#737373</color><!--Regular-->
+    <!-- <color name="colorPrimary">#30318c</color>--><!--Regular-->
+    <color name="button_text_color">#ffffff</color><!--Regular-->
+    <color name="heading_color">#a8a8aa</color><!--Light-->
+
+    <color name="cancelled">#f15a29</color><!--Light-->
+    <color name="pending">#30318c</color><!--Light-->
+    <color name="approved">#b8b8b9</color><!--Light-->
+    <color name="approved_test_color">#ff0266</color>
+
+
+
+   <!-- <color name="colorPrimary">#ff0266</color>
+    <color name="colorPrimaryDark">#ff0266</color>
+    <color name="colorAccent">#30318c</color>
+-->
+
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/colorAccent</color>
+    <color name="colorAccent">#30318c</color>
+
+    <color name="header_bg">#F8F8F8</color>
+    <color name="header_txt">#99999D</color>
+    <color name="transperent">#10FFFFFF</color>
+    <color name="schedule_year_color">#cacaca</color>
+
+    <color name="transperent_white_tint">#99FFFFFF</color>
+
+
+</resources>
