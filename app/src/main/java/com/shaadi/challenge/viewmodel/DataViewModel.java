@@ -5,7 +5,7 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.shaadi.challenge.BR;
-import com.shaadi.challenge.adapter.DataAdapter;
+import com.shaadi.challenge.adapter.UserAdapter;
 import com.shaadi.challenge.database.DatabaseClient;
 import com.shaadi.challenge.database.RoomHelper;
 import com.shaadi.challenge.model.UserDataModel;
@@ -16,13 +16,13 @@ import java.util.List;
 
 public class DataViewModel extends BaseObservable {
     private static final String TAG = "DataViewModel";
-    private DataAdapter adapter;
+    private UserAdapter adapter;
     private List<UserDataModel> data;
     Context context;
 
     public DataViewModel() {
         data = new ArrayList<>();
-        adapter = new DataAdapter();
+        adapter = new UserAdapter();
     }
 
     public void setUp(Context context) {
@@ -41,7 +41,7 @@ public class DataViewModel extends BaseObservable {
     }
 
     @Bindable
-    public DataAdapter getAdapter() {
+    public UserAdapter getAdapter() {
         return this.adapter;
     }
 

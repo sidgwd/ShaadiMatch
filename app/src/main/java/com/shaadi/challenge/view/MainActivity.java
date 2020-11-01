@@ -55,42 +55,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Handler mHandler;
-        mHandler = new Handler();
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                final MaterialTapTargetPrompt.Builder tapTargetPromptBuilder = new MaterialTapTargetPrompt.Builder(MainActivity.this)
-                        .setPrimaryText("Refresh Your Matches")
-                        .setSecondaryText("You can always refresh your matches by clicking here.")
-                        .setAnimationInterpolator(new FastOutSlowInInterpolator())
-                        .setMaxTextWidth(R.dimen.tap_target_menu_max_width).setCaptureTouchEventOnFocal(true)
-                        .setCaptureTouchEventOutsidePrompt(false)
-                        .setBackgroundColour(getResources().getColor(R.color.black))
-                        .setFocalColour(getResources().getColor(R.color.focul_color1))
-                        .setCaptureTouchEventOutsidePrompt(false)
-                        .setTarget(toolbar.getChildAt(1));
-                tapTargetPromptBuilder.setOnHidePromptListener(new MaterialTapTargetPrompt.OnHidePromptListener() {
-                    @Override
-                    public void onHidePrompt(MotionEvent event, boolean tappedTarget) {
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                fetchData();
-                            }
-                        },500);
-                    }
 
-                    @Override
-                    public void onHidePromptComplete() {
-
-                    }
-                });
-
-                tapTargetPromptBuilder.show();
-
-            }
-        }, 1000);
     }
 
     @Override
@@ -136,6 +101,44 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = view.findViewById(R.id.data_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
+
+
+        Handler mHandler;
+        mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                final MaterialTapTargetPrompt.Builder tapTargetPromptBuilder = new MaterialTapTargetPrompt.Builder(MainActivity.this)
+                        .setPrimaryText("Refresh Your Matches")
+                        .setSecondaryText("You can always refresh your matches by clicking here.")
+                        .setAnimationInterpolator(new FastOutSlowInInterpolator())
+                        .setMaxTextWidth(R.dimen.tap_target_menu_max_width).setCaptureTouchEventOnFocal(true)
+                        .setCaptureTouchEventOutsidePrompt(false)
+                        .setBackgroundColour(getResources().getColor(R.color.black))
+                        .setFocalColour(getResources().getColor(R.color.focul_color1))
+                        .setCaptureTouchEventOutsidePrompt(false)
+                        .setTarget(toolbar.getChildAt(1));
+                tapTargetPromptBuilder.setOnHidePromptListener(new MaterialTapTargetPrompt.OnHidePromptListener() {
+                    @Override
+                    public void onHidePrompt(MotionEvent event, boolean tappedTarget) {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                fetchData();
+                            }
+                        },500);
+                    }
+
+                    @Override
+                    public void onHidePromptComplete() {
+
+                    }
+                });
+
+                tapTargetPromptBuilder.show();
+
+            }
+        }, 1000);
     }
 
     public void populateData(){

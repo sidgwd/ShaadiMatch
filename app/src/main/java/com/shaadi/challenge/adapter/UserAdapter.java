@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.shaadi.challenge.BR;
 import com.shaadi.challenge.R;
 import com.shaadi.challenge.database.DatabaseClient;
 import com.shaadi.challenge.database.RoomHelper;
@@ -20,10 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.DataViewHolder> {
     private List<UserDataModel> data;
 
-    public DataAdapter() {
+    public UserAdapter() {
         this.data = new ArrayList<>();
     }
 

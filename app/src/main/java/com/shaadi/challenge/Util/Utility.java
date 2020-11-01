@@ -52,43 +52,6 @@ public class Utility {
     public static ProgressDialog pd = null;
 
 
-    /**
-     * Method to set font to all views
-     *
-     * @param context
-     * @param root     parent view
-     * @param fontName font name
-     */
-    public static void setFont(final Context context, final View root,
-                               String fontName) {
-        try {
-            font = Typeface.createFromAsset(context.getAssets(), fontName);
-
-            if (root instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) root;
-                for (int i = 0; i < viewGroup.getChildCount(); i++)
-                    setFont(context, viewGroup.getChildAt(i), fontName);
-            } else if (root instanceof EditText) {
-                ((EditText) root).setTypeface(font);
-            } else if (root instanceof AutoCompleteTextView) {
-                ((AutoCompleteTextView) root).setTypeface(font);
-            } else if (root instanceof TextView) {
-                ((TextView) root).setTypeface(font);
-            } else if (root instanceof Button) {
-                ((Button) root).setTypeface(font);
-            } else if (root instanceof CheckBox) {
-                ((CheckBox) root).setTypeface(font);
-            } else if (root instanceof RadioButton) {
-                ((RadioButton) root).setTypeface(font);
-            } else if (root instanceof TabWidget) {
-                ((TextView) root).setTypeface(font);
-            } else if (root instanceof TabHost) {
-                ((TextView) root).setTypeface(font);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void removeErrorOnTextChange(final EditText et) {
         et.addTextChangedListener(new TextWatcher() {
